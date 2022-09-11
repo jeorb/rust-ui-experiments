@@ -1,0 +1,16 @@
+[workspace]
+
+members = [
+	"aspect-ratio"
+]
+
+cargo-features = ["strip"]
+
+[profile.release]
+# Uncomment the following when optimizing for size.
+# Strip has the largest impact followed by lto.
+# The opt-level and codegen-unit options have trivial effects but are here for completeness.
+#strip = true
+#lto = true
+#opt-level = 'z'
+#codegen-units = 1
