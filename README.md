@@ -98,8 +98,8 @@ Tall:
 
 
 ## A Note on Licenses
-You may use the code I developed under the MIT and/or Apache 2.0 licences --
-(see the LICENCE-APACHE and LICENSE-MIT files in this repository).
+You may use the code I wrote in this repository under the MIT and/or 
+Apache 2.0 licences. See the LICENCE-APACHE and LICENSE-MIT files.
 
 Code in this repository other than my own may be under different licenses.
 I will make an attempt to mark third party code and link to sources but
