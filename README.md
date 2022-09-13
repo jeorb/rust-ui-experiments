@@ -38,6 +38,13 @@ WASM so there is an already-deployed platform on many devices and the WASM
 specification is small so implemenmting a WASM platform for devices without 
 web browsers is an feasable task.
 
+#### Desired Properties
+- Application can fill the entire viewport or fit a DOM element when in a Web browser
+- Low CPU, GPU, memory, and bandwidth requirements
+- Handle input from keyboard, mouse, touch, pen, game controllers, and TV style remote controls with limited buttons
+- Low latency from input to display update
+- Low latency between internal state update and display update
+
 
 
 ### Opinion: Application Binaries Should be Small
@@ -58,6 +65,34 @@ I've created a few small vector graphics games with Rust using
 tesselation, render caching, and hybrid approaches but never explored which are
 best beyond making the games "fast enough". These experiments are to quantify 
 the performance of various techniques.
+
+
+
+#### Crates Supporting Opinions
+
+- [macroquad](https://github.com/not-fl3/macroquad) - 
+  [Fish Game](https://github.com/heroiclabs/fishgame-macroquad) 
+  [(live demo)](https://fedorgames.itch.io/fish-game)
+  - Stripped Fish Game wasm is about 1.2MB
+  - Very low CPU usage even when updating screen at 60fps with the fish game demo (about 0.01%)
+  - Does not resize to browser viewport size
+  - Browser zoom is blurry (something like bilinear filtering)
+
+- [egui](https://github.com/emilk/egui) - [Web demo](https://www.egui.rs/#demo)
+  - Stripped Web demo wasm is about 4.5MB
+  - Low CPU usage even when updating screen at 60fps with the fractal clock animation (about 1%)
+  - Almost zero CPU usage when widgets are not updating
+  - Fills the browser viewport and resizes with window size and aspect ratio changes
+  - Demonstrates "reactive" layout that changes depending on viewport size
+  - Handles browser scaling without pixelating text
+
+- [BEVY](https://bevyengine.org/) - [Breakout Demo](https://bevyengine.org/examples/games/breakout/)
+  - Stripped Breakout wasm is about 13.8MB
+  - High CPU usage in breakout demo (about 25%)
+  - Demos partially resize to DOM element area
+  - Demos show some elements of responsive layout
+  - Handles browser scaling without pixelating text
+
 
 
 ## Project Status
