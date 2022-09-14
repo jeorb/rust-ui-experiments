@@ -111,26 +111,9 @@ compile and run one of the experiments. For example:
 
 ~~~
 cargo run --package aspect-ratio
-<...build messages...>
-
-Square:
-┏━━━━┓
-┃    ┃
-┗━━━━┛
-
-Wide:
-┏━━━━━━━━┓
-┃        ┃
-┗━━━━━━━━┛
-
-Tall:
-┏━━━━┓
-┃    ┃
-┃    ┃
-┃    ┃
-┗━━━━┛
 ~~~
 
+![aspect-ratio screenshot](figures/aspect-ratio-screenshot.png)
 
 ## A Note on Licenses
 You may use the code I wrote in this repository under the MIT and/or 
